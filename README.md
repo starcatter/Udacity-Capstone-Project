@@ -80,3 +80,63 @@ To run in a standard desktop workspace, before starting the program run `export 
 #### The project uses smart pointers instead of raw pointers.
     /src/app.hpp
     /src/app.cpp - all heap allocated resources are wrapped in unique pointers     
+
+## Project structure
+```
+/CMakeLists.txt
+/readme.md	- this file
+
+/image		- cover image
+/image/game.png
+
+/modules	- cmake find modules
+/modules/FindSDL2.cmake
+/modules/FindSDL2_image.cmake
+/modules/FindSDL2_mixer.cmake
+/modules/FindSDL2_ttf.cmake
+/thirdparty	- in-source dependencies (glm and PID)
+/thirdparty/glm	- gl maths library
+/thirdparty/pid - simple PID implementation
+/shaders	- flat color and simple lighted shaders
+/shaders/lighted.fs
+/shaders/lighted.vs
+/shaders/simple.fs
+/shaders/simple.vs
+/src		- project sources
+/src/main.cpp	- application entry point
+/src/app.cpp	- application implementation
+/src/app.hpp	- application structure
+
+/src/gfx		- code mostly dealing with graphics
+/src/gfx/modelType.cpp
+/src/gfx/modelType.hpp	- enum class desctibing know model types
+/src/gfx/shader.cpp
+/src/gfx/shader.hpp		- shader wrapper, based on code from LearnOpenGL site
+/src/gfx/shaderType.hpp	- enum class desctibing know shader types
+
+/src/scene		- scene representation
+/src/scene/camera.cpp
+/src/scene/camera.hpp		- camera class based on code from LearnOpenGL tutorial
+/src/scene/sceneObject.cpp
+/src/scene/sceneObject.hpp	- representation of an object, along with mesh and shader info
+
+/src/logic		- code mostly dealing with gameplay logic
+/src/logic/collisionEvent.cpp	- implementation mainly contains constructors
+/src/logic/collisionEvent.hpp	- wrapper for data extracted from bullet manifold dump
+/src/logic/enemy.cpp
+/src/logic/enemy.hpp			- enemy AI, or rather two PID controllers glued together to move along two axis
+/src/logic/gameLogic.cpp
+/src/logic/gameLogic.hpp		- gameplay logic implementation, controls player/enemy spawning and AI updates
+
+/src/managers	- managers for assets and initialization
+/src/managers/displayManager.cpp
+/src/managers/displayManager.hpp	-- responsible for all graphics code, init, rendering, and cleanup
+/src/managers/modelManager.cpp
+/src/managers/modelManager.hpp		-- placeholder for a model loader, currently serves hardcoded meshes
+/src/managers/physicsManager.cpp
+/src/managers/physicsManager.hpp	-- Bullet wrapper, initialzies a simple scene and handles spawning and manipulation of rigidbodies
+/src/managers/sceneManager.cpp
+/src/managers/sceneManager.hpp		-- Central class for accessing the scene, reads rigidbody status from physicsManager and updates object positions
+/src/managers/shaderManager.cpp
+/src/managers/shaderManager.hpp		-- placeholder for a shader loader, currently serves two hardcoded shaders
+```
