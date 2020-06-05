@@ -18,10 +18,24 @@ The project should build with CMake/Make.
 
 
 ## Required packages
-SDL2, SDL2_gfx
-Bullet Physics
-OpenGL 3.3 (or newer)
-GLEW
+- SDL2, SDL2_gfx
+- Bullet Physics
+- OpenGL 3.3 (or newer)
+- GLEW
+
+Seems like everything was already installed on the workspace, in case something was missing, here's a list of some package names for `apt install`
+```
+libglew-dev/xenial,now 1.13.0-2 amd64 [installed,automatic]
+libglew1.13/xenial,now 1.13.0-2 amd64 [installed,automatic]
+libbullet-dev/xenial,now 2.83.6+dfsg-3 amd64 [installed,automatic]
+libbulletcollision2.83.6/xenial,now 2.83.6+dfsg-3 amd64 [installed,automatic]
+libbulletdynamics2.83.6/xenial,now 2.83.6+dfsg-3 amd64 [installed,automatic]
+libbulletsoftbody2.83.6/xenial,now 2.83.6+dfsg-3 amd64 [installed,automatic]
+freeglut3/xenial,now 2.8.1-2 amd64 [installed,automatic]
+freeglut3-dev/xenial,now 2.8.1-2 amd64 [installed]
+libglu1-mesa/xenial,now 9.0.0-2.1 amd64 [installed]
+libglu1-mesa-dev/xenial,now 9.0.0-2.1 amd64 [installed,automatic]
+```
 
 
 ## Running
