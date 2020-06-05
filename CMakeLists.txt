@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.13)
 
 project(capstone-sdl VERSION 0.0.1 LANGUAGES C CXX)
 
@@ -24,14 +24,14 @@ target_sources(app
         src/managers/shaderManager.hpp
 
         src/logic/gameLogic.hpp
-        src/logic/Enemy.hpp
+        src/logic/enemy.hpp
         src/logic/collisionEvent.hpp
 
         src/gfx/modelType.hpp
         src/gfx/shaderType.hpp
-        src/gfx/Shader.hpp
+        src/gfx/shader.hpp
 
-        src/scene/Camera.hpp
+        src/scene/camera.hpp
         src/scene/sceneObject.hpp
 
         PRIVATE
@@ -44,13 +44,13 @@ target_sources(app
         src/managers/shaderManager.cpp
 
         src/logic/gameLogic.cpp
-        src/logic/Enemy.cpp
+        src/logic/enemy.cpp
         src/logic/collisionEvent.cpp
 
         src/gfx/modelType.cpp
-        src/gfx/Shader.cpp
+        src/gfx/shader.cpp
 
-        src/scene/Camera.cpp
+        src/scene/camera.cpp
         src/scene/sceneObject.cpp
         )
 

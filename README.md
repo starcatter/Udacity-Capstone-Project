@@ -26,8 +26,8 @@ GLEW
 
 ## Running
 Embedded paths assume shaders can be found at `../shaders`, which should be fine if running from `[project root]/build`.
-The project requires OpenGL support.
-
+The project requires OpenGL 3.3 support.
+To run in a standard desktop workspace, before starting the program run `export MESA_GL_VERSION_OVERRIDE=3.3`
 
 ## Capstone requirements
 

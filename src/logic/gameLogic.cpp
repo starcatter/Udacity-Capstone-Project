@@ -48,7 +48,13 @@ void GameLogic::handleEnemyGroundImpact( CollisionEvent e )
 int GameLogic::countActiveEnemies() const
 {
 	const auto & enemies = scene->getEnemies();
-	int activeEnemies = std::count_if(enemies.begin(), enemies.end(), []( const SceneObject & e){ return e.enabled; });
+	//int activeEnemies = std::count_if(enemies.begin(), enemies.end(), []( const SceneObject & e){ return e.enabled; });
+	int activeEnemies = 0;
+	for(const auto & enemy : enemies){
+		if(enemy.enabled){
+			activeEnemies++;
+		}
+	}
 	return activeEnemies;
 }
 

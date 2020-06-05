@@ -6,8 +6,8 @@
 
 #include <GL/glew.h>
 
-#include <GL/GL.h>
-#include <GL/GLU.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
 
 #include <SDL_log.h>
 #include <SDL_opengl.h>

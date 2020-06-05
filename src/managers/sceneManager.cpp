@@ -58,7 +58,9 @@ void SceneManager::addSparks( glm::vec3 vec, glm::vec3 vec1, float d )
 
 SceneObject *SceneManager::addEnemy()
 {
-	SceneObject &object = enemies.emplace_back(glm::vec3 {5, 10, -5}, glm::vec3 {1, 1, 1}, glm::vec3 {0, 0, 0});
+	enemies.emplace_back(glm::vec3 {5, 10, -5}, glm::vec3 {1, 1, 1}, glm::vec3 {0, 0, 0});
+
+	SceneObject &object = enemies.back();
 	
 	object.enabled = true;
 	object.shader = ShaderType::lightedColor;
